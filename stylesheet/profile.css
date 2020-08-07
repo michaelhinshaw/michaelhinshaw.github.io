@@ -1,6 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Body */
 body {
   margin: 0%; /* ensures the site displays to the edge of the browser */
+  opacity: 1;
+  transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: monospace, 'Courier New', Courier;
+    font-size: 1.5vw
+}
+
+body.fade-out {
+  opacity: .1;
+  transition: none;
 }
 
 /* Navbar */
@@ -11,6 +26,9 @@ body {
   top: 0;
   width: 100%;
   z-index: 1;
+  position: fixed;
+  -webkit-animation: moveNav 5s;
+  animation: moveNav 5s;
 }
 
 /* Navbar text */
@@ -18,11 +36,24 @@ body {
   float: left; /* text floats on the left on the navbar */
   display: block; 
   color:#fafaff;
-  padding: 14px 16px;
+  padding: .75vw 1vw;
   text-decoration: none;
   font-family: Avant-Garde, Helvetica;
-  font-size: 20px;
+  font-size: 1.5vw;
   text-align: center;
+  position: relative;
+  -webkit-animation: movenavText 5.75s;
+  letter-spacing: .2vw;
+}
+
+@keyframes moveNav {
+  from {left: -100vw;}
+  to {left: 0vw;}
+}
+
+@keyframes movevideoText {
+  from {top: -100vw;}
+  to {top: 0px;}
 }
 
 /* Navbar hover effect */
@@ -30,6 +61,9 @@ body {
   background-color: #fafaff;
   color: #1e2749;
   font-weight: bold;
+  cursor: pointer;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 /* Navbar home button */
@@ -38,22 +72,139 @@ body {
 
 }
 
+@keyframes zoominoutsinglefeatured {
+  0% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
+
 /* Video */
 #My_Video {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%;
+  min-height: 100%;
+  top: 0;
   z-index: -1;
-  background-color: #30343f;
+  animation: zoominoutsinglefeatured 5s;
 }
 
 .Video_Text {
   background: rgba(0,0,0,0.5);
   color: #fafaff;
   width: 100%;
-  padding: 20px;
+  padding-top: .1vh;
+  padding-bottom: 1vh;
   margin-top: 23%;
+  position: relative;
+  -webkit-animation: moveNav 4s;
+  animation: movevideoText 4s;
+}
+
+/* slideshow styling */
+#Slideshow_Background {
+  background:rgba(255, 255, 255, 0.35);
+}
+
+.mySlides {
+  display: none;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* slideshow section / container */
+#Slideshow_Container {
+  width: 39.5vw;
+  height: auto;
+  padding-top: 4%;
+  position: relative;
+  margin: auto;
+}
+
+/* images contined within slideshow */
+.Slide_Show_Images {
+  vertical-align: middle;
+  height: 100%;
+  box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+  width: 100%;
+  background-size: cover;
+}
+
+/* next previous buttons */
+.Previous, .Next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 2vw;
+  margin-top: -0vw;
+  color: darkgray;
+  font-weight: bold;
+  font-size: 1.5vw;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transition: 0.6s ease;
+}
+
+/* positioning the right-hand next button */
+.Next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* hover effect on slide show buttons */
+.Previous:hover, .Next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* slideshow text */
+.text {
+  color: white;
+  padding: 1vw;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: Perpetua, Rockwell Extra Bold;
+  letter-spacing: .1vw;
+  font-size: 1.5vw;
+  background-color: rgba(0,0,0,0.75);
+  font-weight: bold;
+  border-radius: 7px 7px 7px 7px;
+}
+
+/* dots under the slideshow */
+.dot {
+  cursor: pointer;
+  height: 1vw;
+  width: 1vw;
+  margin: .25vw;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* hover effect for slideshow dots */
+.active .dot:hover {
+  background-color: black;
+}
+
+/* fading animation for slideshow */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s
 }
 
 * {
@@ -63,8 +214,7 @@ body {
 .Column_1 {
   float: left;
   width: 50%;
-  padding: 10px;
-  padding-top: 3%;
+  padding: 1.6%;
   height: 500px;
   background-color: #e4d9ff;
 }
@@ -72,20 +222,25 @@ body {
 .Column_2 {
   float: left;
   width: 50%;
-  padding: 10px;
-  padding-top: 1.9%;
+  padding: 1.6%;
   height: 500px;
   background-color: #e4d9ff;
 }
 
-.Column_3 {
+.Row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*.Column_3 {
   float: left;
   width: 50%;
   padding: 10px;
   padding-top: 3.5%;
   height: 450px;
   background-color: #30343f;
-}
+} */
 
 .Row:after {
   content: "";
@@ -107,20 +262,23 @@ h1 {
 p {
   font-family: Perpetua, Rockwell Extra Bold;
   text-align: justify;
-  letter-spacing: 1px;
-  font-size: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #30343f;
+  letter-spacing: .1vw;
+  font-size: 1.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 center {
   font-family: Perpetua, Rockwell Extra Bold;
   text-align: center;
-  letter-spacing: 1px;
-  font-size: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  letter-spacing: .1vw;
+  font-size: 1.5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+a {
+  color blue;
 }
 
 h2 {
@@ -147,56 +305,9 @@ img {
   filter: grayscale(75%);
   border-radius: 8px;
   max-width: 100%;
-  height: 340px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100%;
+  margin: auto auto auto auto;
   display: block;
-}
-
-/* contact form */
-
-input[type=text] {
-  width: 100%;
-  padding: 12px;
-border: 1px solid #e4d9ff;
-border-radius: 4px;
-box-sizing: border-box;
-margin-top: 6px;
-margin-bottom: 16px;
-resize: vertical;
-font-family: Perpetua, Rockwell Extra Bold;
-}
-
-/* submit button */
-input[type=submit] {
-  background-color: #30343f;
-  color: #fb6376;
-  font-weight: bold;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Perpetua, Rockwell Extra Bold;
-}
-
-/* Hover effect for submit button */
-input[type=submit]:hover {
-  background-color:#fafaff;
-  color: black;
-  font-weight: bold;
-  transform: scale(1.5);
-  transition: transform 1.5s;
-}
-
-/* form element */
-form {
-  border-radius: 5px;
-  background-color: #e4d9ff;
-  padding: 20px;
-  font-family: "Trebuchet MS", Optima;
 }
 
 /* Center align element hover effect */
@@ -223,6 +334,96 @@ img:hover {
   filter:grayscale(5%);
   transition: transform 1s;
   transform: scale(1.1);
+}
+
+/* contact form styling */
+/*makes contact form button slide in from right on page load */
+@keyframes movePopup {
+  from {right: -40vw;}
+  to {bottom: 1.75vw;}
+}
+
+/*button use to open the contact form - fixed at the bottom of the page */
+.Pop_Up_Button {
+  bottom: 1.75vw;
+  right: 1.75vw;
+  width: 25vw;
+  background-color: white;
+  color: black;
+  border: solid;
+  cursor: pointer;
+  position: fixed;
+  -webkit-animation: movePopup 5s;
+  animation: movePopup 5s;
+}
+
+/* the popup form - hidden by default */
+.form-popup {
+  border: 3px solid #fb6376;
+  background-color: #273469
+  z-index: 8;
+  display: none;
+  position: fixed;
+  bottom: 6px;
+  right: 6px;
+}
+
+/* input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: .93vw;
+  margin: .6vw 0 .6vw 0;
+  border: none;
+  background: Gainsboro;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
+}
+
+/* submit button */
+.form-container .btn {
+  background-color: white;
+  color: black;
+  border-color: black;
+  margin-bottom: 1vh;
+}
+
+/* close button */
+.form container .cancel {
+  background-color: black;
+  color: white;
+  border-color: gray;
+}
+
+/*button styling */
+button {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: .3vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  padding: 1.5vw 1.5vw;
+  border-style: solid;
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+}
+
+/* hover effect for button */
+button:hover, .form-container .btn:hover {
+  color: white;
+  background-color: black;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  border-style: solid;
+  border-color: silver;
+}
+
+.form-container .cancel:hover {
+  color: white;
+  background-color: #05b2dc;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  border-style: solid;
+  border-color: white;
 }
 
 /* footer element */
