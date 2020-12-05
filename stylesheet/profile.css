@@ -21,7 +21,7 @@ body.fade-out {
 /* Navbar */
 .Navbar {
   overflow: hidden; /* ensures that any content beyond the boundary is not displayed */
-  background-color: #05b2dc;
+  background-color: #5e7f97;
   position: fixed; /* keeps navbar at the top of the screen */
   top: 0;
   width: 100%;
@@ -34,7 +34,7 @@ body.fade-out {
 /* Navbar text */
 .Navbar a {
   float: left; /* text floats on the left on the navbar */
-  display: block; 
+  display: block;
   color:#fafaff;
   padding: .75vw 1vw;
   text-decoration: none;
@@ -68,7 +68,7 @@ body.fade-out {
 
 /* Navbar home button */
 .Navbar a.active  { /* active selector styles a link */
-  background-color: #fb6376;
+  background-color: #ff6b6c;
 
 }
 
@@ -106,7 +106,7 @@ body.fade-out {
 
 /* slideshow styling */
 #Slideshow_Background {
-  background:rgba(255, 255, 255, 0.35);
+  background:rgba(255, 255, 255, 0.1);
 }
 
 .mySlides {
@@ -120,7 +120,7 @@ body.fade-out {
 
 /* slideshow section / container */
 #Slideshow_Container {
-  width: 39.5vw;
+  width: 37.5vw;
   height: auto;
   padding-top: 4%;
   position: relative;
@@ -203,9 +203,9 @@ body.fade-out {
 /* fading animation for slideshow */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1.0s;
   animation-name: fade;
-  animation-duration: 1.5s
+  animation-duration: 1.0s
 }
 
 * {
@@ -217,7 +217,7 @@ body.fade-out {
   width: 50%;
   padding: 1.6%;
   height: 500px;
-  background-color: #e4d9ff;
+  background-color: #82A0BC;
 }
 
 .Column_2 {
@@ -225,7 +225,7 @@ body.fade-out {
   width: 50%;
   padding: 1.6%;
   height: 500px;
-  background-color: #e4d9ff;
+  background-color: #545E75;
 }
 
 .Row:after {
@@ -255,13 +255,23 @@ h1 {
   font-family: "Trebuchet MS", Optima;
   text-align: center;
   margin-top: 3%;
-  color: #1e2749;
+  color: #1e2749;color:
+}
+
+.frm-contact {
+  text-transform: uppercase;
+  font-family: "Trebuchet MS", Optima;
+  text-align: center;
+  margin-top: 3%;
+  color: white;
+
 }
 
 /* paragraph elements */
 
 p {
   font-family: Perpetua, Rockwell Extra Bold;
+  color: #FFFFFB;
   text-align: justify;
   letter-spacing: .1vw;
   font-size: 1.5vw;
@@ -303,7 +313,7 @@ q {
 /* image elements */
 
 img {
-  filter: grayscale(75%);
+  filter: grayscale(25%);
   border-radius: 8px;
   max-width: 100%;
   height: 100%;
@@ -317,16 +327,9 @@ center:hover {
   transform: scale(1.1);
 }
 
-/* Paragraph element hover effect */
-p:hover {
-  color: #273469;
-  transition: transform 1s;
-  transform: scale(1.01);
-}
-
-/* Heading 1 element hover effect */
-h1:hover {
-  color: #1e2749;
+/* anchor element hover effect */
+a:hover {
+  color: #ff6b6c;
   font-weight: normal;
 }
 
@@ -431,5 +434,5 @@ button:hover, .form-container .btn:hover {
 /* footer element */
 footer {
   padding: 2%;
-  background-color: #fb6376;
+  background-color: #ff6b6c;
 }
