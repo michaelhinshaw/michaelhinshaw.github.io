@@ -411,17 +411,6 @@ button {
   width: 100%;
   height: auto;
 }
-input[type=submit] {
-  font-family: 'Courier New', Courier, monospace;
-  letter-spacing: .3vw;
-  font-size: 1.5vw;
-  font-weight: bold;
-  padding: 1.5vw 1.5vw;
-  border-style: solid;
-  cursor: pointer;
-  width: 100%;
-  height: auto;
-}
 
 /* hover effect for button */
 button:hover, .form-container .btn:hover {
