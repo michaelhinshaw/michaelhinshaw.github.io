@@ -1,4 +1,17 @@
+var vid = document.getElementById("My_Video");
+
+function getPlaySpeed() {
+  alert(vid.playbackRate);
+}
+
+function setPlaySpeed() {
+  vid.playbackRate = 0.25;
+}
+
+
 // open and close the contact form
+
+
 
 function openForm() {
   document.getElementById("myForm").style.display = "block";

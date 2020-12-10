@@ -89,7 +89,7 @@ body.fade-out {
   min-height: 100%;
   top: 0;
   z-index: -1;
-  animation: zoominoutsinglefeatured 5s;
+  animation: zoominoutsinglefeatured 25s;
 }
 
 .Video_Text {
@@ -401,6 +401,17 @@ img:hover {
 
 /*button styling */
 button {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: .3vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  padding: 1.5vw 1.5vw;
+  border-style: solid;
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+}
+input[type=submit] {
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: .3vw;
   font-size: 1.5vw;
