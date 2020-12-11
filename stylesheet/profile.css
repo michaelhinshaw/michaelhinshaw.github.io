@@ -106,7 +106,7 @@ body.fade-out {
 
 /* slideshow styling */
 #Slideshow_Background {
-  background:rgba(255, 255, 255, 0.1);
+  background:rgba(255, 255, 255, 0.65);
 }
 
 .mySlides {
@@ -255,7 +255,7 @@ h1 {
   font-family: "Trebuchet MS", Optima;
   text-align: center;
   margin-top: 3%;
-  color: #1e2749;color:
+  color: #1e2749;
 }
 
 .frm-contact {
@@ -266,6 +266,33 @@ h1 {
   color: white;
 
 }
+
+/* paragraph elements in the link section */
+
+.link-section {
+  font-size: 1.5vw;
+}
+
+i {
+  font-size: 2.0vw;
+  color: #FFFFFB;
+}
+
+i:hover {
+  color: #1e2749;
+}
+
+
+
+/*.project-text {
+  font-family: Perpetua, Rockwell Extra Bold;
+  color: #FFFFFB;
+  text-align: justify;
+  letter-spacing: .1vw;
+  font-size: 1.0vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}*/
 
 /* paragraph elements */
 
@@ -289,7 +316,7 @@ center {
 }
 
 a {
-  color blue;
+  color: FFFFFB;
 }
 
 h2 {
@@ -299,6 +326,14 @@ h2 {
 label {
   color: #273469;
 }
+.links_section {
+  color: #fffffb;
+}
+
+.links_section:hover {
+  color: #ff6b6c;
+}
+
 /* anchor elements */
 a {
   color: #30343f;

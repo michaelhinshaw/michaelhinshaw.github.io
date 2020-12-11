@@ -5,7 +5,7 @@ function getPlaySpeed() {
 }
 
 function setPlaySpeed() {
-  vid.playbackRate = 0.25;
+  vid.playbackRate = 0.20;
 }
 
 
